@@ -11,8 +11,8 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     // ===== SV1: TaiKhoan, LoaiDichVu =====
-    // public DbSet<TaiKhoan> TaiKhoan { get; set; }
-    // public DbSet<LoaiDichVu> LoaiDichVu { get; set; }
+    public DbSet<TaiKhoan> TaiKhoan { get; set; }
+    public DbSet<LoaiDichVu> LoaiDichVu { get; set; }
 
     // ===== SV2: ThuCung, ChuyenMonThuCung =====
     // public DbSet<ThuCung> ThuCung { get; set; }
@@ -40,8 +40,8 @@ public class AppDbContext : DbContext
             fk.DeleteBehavior = DeleteBehavior.Restrict;
 
         // ----- SV1 -----
-        // modelBuilder.Entity<TaiKhoan>().HasIndex(t => t.TenDangNhap).IsUnique();
-        // modelBuilder.Entity<LoaiDichVu>().HasIndex(l => l.TenLoaiDichVu).IsUnique();
+        modelBuilder.Entity<TaiKhoan>().HasIndex(t => t.TenDangNhap).IsUnique();
+        modelBuilder.Entity<LoaiDichVu>().HasIndex(l => l.TenLoaiDichVu).IsUnique();
 
         // ----- SV2 -----
 

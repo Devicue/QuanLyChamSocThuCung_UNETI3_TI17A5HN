@@ -36,3 +36,4 @@ public class TaiKhoan
 
     [Display(Name = "Hoạt động")]
     public bool TrangThai { get; set; } = true;
+}
